@@ -25,23 +25,36 @@ Berikut adalah estimasi tahapan pengerjaan proyek berdasarkan siklus pengembanga
 | 5 | **Testing & Debugging** | Pengujian fungsionalitas CRUD, transaksi, filter, dan perbaikan *bug*. | Hari ke-4 |
 | 6 | **Build & Deployment** | Finalisasi project, merapikan struktur folder, dan *push* repository ke GitHub. | Hari ke-4 |
 
----
-
 ## ERD & Rancangan Struktur Database
 Sistem ini menggunakan database **MySQL** dengan relasi antar tabel sebagai berikut:
-* **Tabel `services` (Layanan)** berelasi 1 ke Banyak (1:N) dengan **Tabel `orders` (Pemesanan)**
-* **Tabel `customers` (Pelanggan)** berelasi 1 ke Banyak (1:N) dengan **Tabel `orders` (Pemesanan)**
 
-### Diagram ERD (Entity Relationship Diagram)
-*(Kamu bisa upload gambar hasil export Draw.io ke repository GitHub, lalu ganti link di bawah ini dengan link gambar kamu)*
-![Diagram ERD Sistem](./path-to-your-erd-image.png)
+```mermaid
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : "makes"
+    SERVICES ||--o{ ORDERS : "included_in"
 
-### Struktur Kolom Utama:
-1. **`services`**: `id`, `name`, `description`, `price`, `timestamps`
-2. **`customers`**: `id`, `name`, `phone`, `address`, `timestamps`
-3. **`orders`**: `id`, `customer_id`, `service_id`, `order_date`, `status`, `total_price`, `timestamps`
+    CUSTOMERS {
+        int id PK
+        string name
+        string phone
+        text address
+        timestamp created_at
+    }
 
-## Cara Menjalankan Project
-1. Clone repository ini:
-   ```bash
-   git clone <url-repository-kamu>
+    SERVICES {
+        int id PK
+        string name
+        text description
+        decimal price
+        timestamp created_at
+    }
+
+    ORDERS {
+        int id PK
+        int customer_id FK
+        int service_id FK
+        date order_date
+        string status
+        decimal total_price
+        timestamp created_at
+    }
