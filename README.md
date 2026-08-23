@@ -27,6 +27,7 @@ Berikut adalah estimasi tahapan pengerjaan proyek berdasarkan siklus pengembanga
 | 6 | **Build & Deployment** | Finalisasi project, merapikan struktur folder, dan *push* repository ke GitHub. | Hari ke-4 |
 
 **ERD & Rancangan Struktur Database**
+
 Sistem ini menggunakan database **MySQL** dengan relasi antar tabel sebagai berikut:
 
 ```mermaid
@@ -59,8 +60,9 @@ erDiagram
         decimal total_price
         timestamp created_at
     }
-    ```
-    **Flowchart Sistem Pemesanan**
+Flowchart Sistem Pemesanan
+
+Cuplikan kode
 flowchart TD
     %% Styling warna latar belakang putih & garis hitam
     classDef white fill:#ffffff,stroke:#333333,stroke-width:1.5px,color:#000000;
@@ -82,8 +84,8 @@ flowchart TD
 
     %% Terapkan style putih ke semua elemen
     class A,B,C,D,E,F,G,H,I,J,K,L white;
+Arsitektur Komponen Blade & Styling Tailwind CSS
 
-    ***Arsitektur Komponen Blade & Styling Tailwind CSS***
 Sistem UI dibangun secara modular menggunakan fitur Blade Component & Layouts bawaan Laravel serta Tailwind CSS untuk konsistensi tampilan:
 
 Base Layout (resources/views/layouts/app.blade.php): Menyediakan struktur HTML utama, header, sidebar navigasi, tempat penampung skrip Tailwind, dan area @yield('content').
