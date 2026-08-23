@@ -13,8 +13,6 @@ Sistem informasi berbasis Web untuk manajemen pemesanan layanan, pengolahan data
 * **Templating:** Blade Engine
 * **Styling:** Tailwind CSS
 
----
-
 ## Time Schedule (Linimasa Pengerjaan)
 Berikut adalah estimasi tahapan pengerjaan proyek berdasarkan siklus pengembangan perangkat lunak (SDLC):
 
@@ -42,8 +40,6 @@ Sistem ini menggunakan database **MySQL** dengan relasi antar tabel sebagai beri
 1. **`services`**: `id`, `name`, `description`, `price`, `timestamps`
 2. **`customers`**: `id`, `name`, `phone`, `address`, `timestamps`
 3. **`orders`**: `id`, `customer_id`, `service_id`, `order_date`, `status`, `total_price`, `timestamps`
-
----
 
 ## Cara Menjalankan Project
 1. Clone repository ini:
