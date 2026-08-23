@@ -1,22 +1,22 @@
-# APLIKASI PEMESANAN LAYANAN — SELEKSI TEFA RPL SMKN 1 KATAPANG
+**APLIKASI PEMESANAN LAYANAN — SELEKSI TEFA RPL SMKN 1 KATAPANG**
 
 Sistem informasi berbasis Web untuk manajemen pemesanan layanan, pengolahan data pelanggan, serta pemantauan status transaksi secara real-time.
 
-## Fitur Utama
+**Fitur Utama**
 
 * **Sistem CRUD Lengkap:** Pengolahan data Layanan, Pelanggan, dan Pemesanan.
 * **Manajemen Status Pemesanan:** Pelacakan status transaksi secara terstruktur.
 * **Pencarian & Filter:** Pencarian data interaktif pada tabel utama.
 * **Dashboard Ringkasan:** Ringkasan statistik transaksi dan layanan populer.
 
-## Tech Stack
+**Tech Stack**
 
 * **Framework:** Laravel
 * **Database:** MySQL
 * **Templating:** Blade Engine
 * **Styling:** Tailwind CSS
 
-## Time Schedule (Linimasa Pengerjaan)
+**Time Schedule (Linimasa Pengerjaan)**
 
 Berikut adalah estimasi tahapan pengerjaan proyek berdasarkan siklus pengembangan perangkat lunak (SDLC):
 
@@ -29,7 +29,7 @@ Berikut adalah estimasi tahapan pengerjaan proyek berdasarkan siklus pengembanga
 | 5  | **Testing & Debugging**    | Pengujian fungsionalitas CRUD, transaksi, filter, dan perbaikan *bug*.          | Hari ke-4                |
 | 6  | **Build & Deployment**     | Finalisasi project, merapikan struktur folder, dan *push* repository ke GitHub. | Hari ke-4                |
 
-## ERD & Rancangan Struktur Database
+**ERD & Rancangan Struktur Database**
 
 Sistem ini menggunakan database **MySQL** dengan relasi antar tabel sebagai berikut:
 
@@ -65,7 +65,7 @@ erDiagram
     }
 ```
 
-## Flowchart Sistem Pemesanan
+**Flowchart Sistem Pemesanan**
 
 ```mermaid
 flowchart TD
@@ -89,17 +89,17 @@ flowchart TD
     class A,B,C,D,E,F,G,H,I,J,K,L white;
 ```
 
-## Arsitektur Komponen Blade & Styling Tailwind CSS
+**Arsitektur Komponen Blade & Styling Tailwind CSS**
 
 Sistem UI dibangun secara modular menggunakan fitur **Blade Component & Layouts** bawaan Laravel serta **Tailwind CSS** untuk konsistensi tampilan.
 
-### Base Layout
+**Base Layout**
 
 `resources/views/layouts/app.blade.php`
 
 Menyediakan struktur HTML utama, **header**, **sidebar** navigasi, tempat penampung skrip Tailwind, dan area `@yield('content')`.
 
-### Components
+**Components**
 
 `resources/views/components/`
 
@@ -108,7 +108,7 @@ Menyediakan struktur HTML utama, **header**, **sidebar** navigasi, tempat penamp
 * `card-stat.blade.php` — Komponen kartu ringkasan statistik pada Dashboard.
 * `table.blade.php` — Komponen tabel interaktif reusable dengan *badge status* Tailwind.
 
-### Views Utama
+**Views Utama**
 
 `resources/views/pages/`
 
