@@ -1,4 +1,4 @@
-**APLIKASI PEMESANAN LAYANAN - SELEKSI TEFA RPL SMKN 1 KATAPANG**
+**APLIKASI PEMESANAN LAYANAN — SELEKSI TEFA RPL SMKN 1 KATAPANG**
 
 Sistem informasi berbasis Web untuk manajemen pemesanan layanan, pengolahan data pelanggan, serta pemantauan status transaksi secara real-time.
 
@@ -59,3 +59,51 @@ erDiagram
         decimal total_price
         timestamp created_at
     }
+    ```
+    **Flowchart Sistem Pemesanan**
+flowchart TD
+    %% Styling warna latar belakang putih & garis hitam
+    classDef white fill:#ffffff,stroke:#333333,stroke-width:1.5px,color:#000000;
+
+    A([Mulai - Buka Web]) --> B[Halaman Utama / Dashboard]
+    B --> C{Pilih Menu}
+    
+    C -->|Kelola Layanan| D[Halaman Layanan - CRUD]
+    C -->|Kelola Pelanggan| E[Halaman Pelanggan - CRUD]
+    C -->|Transaksi Pemesanan| F[Halaman Pemesanan]
+
+    F --> G[Input / Tambah Pemesanan Baru]
+    G --> H[Pilih Pelanggan & Jenis Layanan]
+    H --> I[Sistem Hitung Total Harga Otomatis]
+    I --> J[Simpan Transaksi ke Database]
+    
+    J --> K[Update Status Pemesanan: Pending / Diproses / Selesai]
+    K --> L([Selesai / Tampil Ringkasan Laporan])
+
+    %% Terapkan style putih ke semua elemen
+    class A,B,C,D,E,F,G,H,I,J,K,L white;
+
+    ***Arsitektur Komponen Blade & Styling Tailwind CSS***
+Sistem UI dibangun secara modular menggunakan fitur Blade Component & Layouts bawaan Laravel serta Tailwind CSS untuk konsistensi tampilan:
+
+Base Layout (resources/views/layouts/app.blade.php): Menyediakan struktur HTML utama, header, sidebar navigasi, tempat penampung skrip Tailwind, dan area @yield('content').
+
+Components (resources/views/components/):
+
+navbar.blade.php — Bilah navigasi atas dengan pencarian cepat.
+
+sidebar.blade.php — Menu navigasi utama (Dashboard, Layanan, Pelanggan, Transaksi).
+
+card-stat.blade.php — Komponen kartu ringkasan statistik pada Dashboard.
+
+table.blade.php — Komponen tabel interaktif reusable dengan badge status Tailwind.
+
+Views Utama (resources/views/pages/):
+
+dashboard.blade.php — Ringkasan total transaksi dan layanan terlaris.
+
+services/index.blade.php — Form dan tabel kelola data layanan.
+
+customers/index.blade.php — Form dan tabel kelola data pelanggan.
+
+orders/index.blade.php — Form transaksi pemesanan dan pembaruan status.
