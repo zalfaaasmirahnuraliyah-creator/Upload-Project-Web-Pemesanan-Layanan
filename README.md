@@ -34,7 +34,18 @@ Sistem ini menggunakan database **MySQL** dengan relasi antar tabel sebagai beri
 * **Tabel `services` (Layanan)** berelasi 1 ke Banyak (1:N) dengan **Tabel `orders` (Pemesanan)**
 * **Tabel `customers` (Pelanggan)** berelasi 1 ke Banyak (1:N) dengan **Tabel `orders` (Pemesanan)**
 
+### Diagram ERD (Entity Relationship Diagram)
+*(Kamu bisa upload gambar hasil export Draw.io ke repository GitHub, lalu ganti link di bawah ini dengan link gambar kamu)*
+![Diagram ERD Sistem](./path-to-your-erd-image.png)
+
 ### Struktur Kolom Utama:
 1. **`services`**: `id`, `name`, `description`, `price`, `timestamps`
 2. **`customers`**: `id`, `name`, `phone`, `address`, `timestamps`
 3. **`orders`**: `id`, `customer_id`, `service_id`, `order_date`, `status`, `total_price`, `timestamps`
+
+---
+
+## Cara Menjalankan Project
+1. Clone repository ini:
+   ```bash
+   git clone <url-repository-kamu>
